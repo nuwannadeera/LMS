@@ -42,12 +42,6 @@
                 <li class="nav-item mb-1">
                     <a href="#">
                         <i class="fa-regular fa-user"></i>
-                        Change pw.
-                    </a>
-                </li>
-                <li class="nav-item mb-1">
-                    <a href="#">
-                        <i class="fa-regular fa-user"></i>
                         View Result
                     </a>
                 </li>

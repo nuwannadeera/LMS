@@ -33,4 +33,10 @@ Route::post('/registration', [AuthManagerController::class, 'registrationPost'])
 
 Route::get('/logout', [AuthManagerController::class, 'logout'])->name('logout');
 
+
+
 Route::get('/change-password', [ChangePasswordController::class, 'goToChangePasswordForm'])->name('changePasswordForm');
+
+
+
+Route::post('/change-password/{user}', [ChangePasswordController::class, 'updatePassword'])->name('updatePassword');
