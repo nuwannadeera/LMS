@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('password')->unique();
             $table->string('email')->unique();
-            $table->bigInteger('indexno')->unique();
+            $table->bigInteger('indexno')->unique()->nullable();
             $table->string('address');
             $table->string('contactno');
             $table->string('type');

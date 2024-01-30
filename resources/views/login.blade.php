@@ -34,7 +34,7 @@
             @csrf
             <br>
             <div class="form-group">
-                <label>E - mail</label>
+                <label>E-mail</label>
                 <input type="email" class="form-control" placeholder="Enter Email" name="email">
             </div>
             <div class="form-group">
