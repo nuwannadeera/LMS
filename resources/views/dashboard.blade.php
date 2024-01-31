@@ -27,7 +27,7 @@
         <ul class="mynav nav nav-pills flex-column mb-auto">
             @if(auth()->user()->type == 1)
                 <li class="nav-item mb-1">
-                    <a href="#">
+                    <a href="{{route('goToRegisterStudent')}}">
                         <i class="fa-regular fa-user"></i>
                         Add Student
                     </a>

@@ -50,45 +50,29 @@ class AuthManagerController extends Controller {
     }
 
     function registrationPost(Request $request) {
-//        default validations
-        $validator = Validator::make($request->all(), [
+        $request->validate([
             'name' => 'required',
             'password' => 'required',
             'email' => 'required|unique:users',
             'address' => 'required',
-            'contactno' => 'required|unique:users',
-            'type' => 'required'
+            'contactno' => 'required|unique:users'
         ]);
 
-// Add a custom validation rule to check if indexno and password are the same
-        $validator->after(function ($validator) use ($request) {
-            if (($request->password !== $request->indexno) && $request->type == 2) {
-                $validator->errors()->add('error', 'The password and Index No must be the same.');
-            }
-            if ($request->type == 2 && $request->indexno == '') {
-                $validator->errors()->add('error', 'Index No is required');
-            }
-        });
-        if ($validator->fails()) {
-            return redirect(route('registration'))
-                ->withErrors($validator)->withInput();
-        } else {
-            $data = [
-                'name' => $request->name,
-                'email' => $request->email,
-                'password' => Hash::make($request->password),
-                'address' => $request->address,
-                'contactno' => $request->contactno,
-                'indexno' => $request->indexno,
-                'type' => $request->type
-            ];
+        $data = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'address' => $request->address,
+            'contactno' => $request->contactno,
+            'indexno' => $request->indexno,
+            'type' => 1
+        ];
 
-            $user = User::create($data);
-            if (!$user) {
-                return redirect(route('registration'))->with("error", "Registration error!");
-            }
-            return redirect(route('login'))->with("success", "Registration success!");
+        $user = User::create($data);
+        if (!$user) {
+            return redirect(route('registration'))->with("error", "Registration error!");
         }
+        return redirect(route('login'))->with("success", "Registration success!");
     }
 
     function logout() {

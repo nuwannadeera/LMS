@@ -41,10 +41,10 @@
                 <label style="font-weight: bold">E-mail</label>
                 <input type="email" class="form-control" placeholder="Enter Email" name="email">
             </div>
-            <div class="form-group">
-                <label style="font-weight: bold">Index No</label>
-                <input type="password" class="form-control" placeholder="Enter Index No" name="indexno">
-            </div>
+            {{--<div class="form-group">--}}
+                {{--<label style="font-weight: bold">Index No</label>--}}
+                {{--<input type="password" class="form-control" placeholder="Enter Index No" name="indexno">--}}
+            {{--</div>--}}
             <div class="form-group">
                 <label style="font-weight: bold">Password</label>
                 <input type="password" class="form-control" placeholder="Enter Password" name="password">
@@ -57,14 +57,14 @@
                 <label style="font-weight: bold">Contact No</label>
                 <input type="text" class="form-control" placeholder="Enter Contact No" name="contactno">
             </div>
-            <div class="form-group">
-                <label style="font-weight: bold">Type</label>
-                <select class="custom-select" name="type">
-                    <option>Select Type</option>
-                    <option value="1">Admin</option>
-                    <option value="2">Student</option>
-                </select>
-            </div>
+            {{--<div class="form-group">--}}
+                {{--<label style="font-weight: bold">Type</label>--}}
+                {{--<select class="custom-select" name="type">--}}
+                    {{--<option>Select Type</option>--}}
+                    {{--<option value="1">Admin</option>--}}
+                    {{--<option value="2">Student</option>--}}
+                {{--</select>--}}
+            {{--</div>--}}
             <button type="submit" class="btn btn-primary">Sign Up</button>
         </form>
     </div>

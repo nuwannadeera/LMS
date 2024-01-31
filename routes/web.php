@@ -1,8 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthManagerController;
 use App\Http\Controllers\ChangePasswordController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RegisterStudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,3 +41,9 @@ Route::get('/change-password', [ChangePasswordController::class, 'goToChangePass
 
 
 Route::post('/change-password/{user}', [ChangePasswordController::class, 'updatePassword'])->name('updatePassword');
+
+
+
+Route::get('/registerStudent', [RegisterStudentController::class, 'goToRegisterStudent'])->name('goToRegisterStudent');
+
+Route::post('/registerStudent', [RegisterStudentController::class, 'saveStudent'])->name('saveStudent');

@@ -1,5 +1,5 @@
 @extends('layout')
-@section('title','Login')
+@section('title','Change PW')
 @section('lgrContent')
     <div class="container">
         <div class="mt-3">
