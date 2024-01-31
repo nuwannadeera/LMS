@@ -35,21 +35,31 @@ class AddResultController extends Controller {
         }
 
         $resultsData = [];
+        $studentId = $request->input('student');
+
         foreach ($subjectList as $subject) {
             // Retrieve marks from the request using subject names as keys
             $marks = $request->input($subject->subject);
-            // Prepare data for each other subject
-            $resultsData[] = [
-                'user_id' => $request->student,
-                'subject_id' => $subject->subject_id,
-                'marks' => $marks,
-            ];
+
+            // Check if result already exists for the given student and subject
+            $existingResult = Result::where('user_id', $studentId)
+                ->where('subject_id', $subject->subject_id)
+                ->first();
+
+            if ($existingResult) {
+                // If result exists, update the existing record
+                $existingResult->update(['marks' => $marks]);
+            } else {
+                // Prepare data for each other subject
+                $resultsData[] = [
+                    'user_id' => $request->student,
+                    'subject_id' => $subject->subject_id,
+                    'marks' => $marks,
+                ];
+            }
         }
-        // Insert multiple rows into the results table
-        $result = Result::insert($resultsData);
-        if (!$result) {
-            return redirect()->route('addResultPage')->with("error", "Adding Result error!");
-        }
+        // Use the updateOrInsert method to handle both update and insert
+        Result::upsert($resultsData, ['user_id', 'subject_id'], ['marks']);
         return redirect()->route('addResultPage')->with("success", "Result Added successfully!");
     }
 }
