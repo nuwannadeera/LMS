@@ -3,7 +3,7 @@
 @section('dashboardContent')
     <div class="box box-primary smart-scroll-y" style="height: calc(100vh - 176px);width: 1115px">
         <div class="box-body">
-            @if(empty($resultList))
+            @if(count($resultList) == 0)
                 <h2 style="text-align: center">Results not yet added...!</h2>
             @else
                 <h3 style="text-align: center">Results</h3>
