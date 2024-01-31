@@ -40,7 +40,7 @@
                 </li>
             @else
                 <li class="nav-item mb-1">
-                    <a href="#">
+                    <a href="{{route('goToResultView')}}">
                         <i class="fa-regular fa-user"></i>
                         View Result
                     </a>

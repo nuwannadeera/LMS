@@ -28,7 +28,7 @@ class ChangePasswordController extends Controller {
         } else {
             $input = $request->all();
             $user->update($input);
-            return redirect()->route('dashboard');
+            return redirect()->route('goToResultView');
         }
     }
 

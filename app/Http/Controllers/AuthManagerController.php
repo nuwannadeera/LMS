@@ -36,7 +36,6 @@ class AuthManagerController extends Controller {
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
-//            dd(Hash::check($user->indexno, $user->password));
             if (($user->type == 2)) {
                 if (Hash::check($user->indexno, $user->password)) {
                     return view('changePassword');

@@ -17,7 +17,7 @@
         <a class="navbar-brand"><b style="color: white">LMS Dashboard</b></a>
         <form class="form-inline">
             @if(\Route::current()->getName() == 'login')
-                <label style="color: white;font-weight: bold">Don't you have an account ??</label>&nbsp;&nbsp;
+                <label style="color: white;font-weight: bold">Make an account as Admin here..</label>&nbsp;&nbsp;
                 <a href="{{route('registration')}}" class="btn btn-success">Signup</a>
             @endif
         </form>

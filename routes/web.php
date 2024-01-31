@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthManagerController;
 use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\RegisterStudentController;
+use App\Http\Controllers\ViewResultsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,8 +39,6 @@ Route::get('/logout', [AuthManagerController::class, 'logout'])->name('logout');
 
 Route::get('/change-password', [ChangePasswordController::class, 'goToChangePasswordForm'])->name('changePasswordForm');
 
-
-
 Route::post('/change-password/{user}', [ChangePasswordController::class, 'updatePassword'])->name('updatePassword');
 
 
@@ -47,3 +46,7 @@ Route::post('/change-password/{user}', [ChangePasswordController::class, 'update
 Route::get('/registerStudent', [RegisterStudentController::class, 'goToRegisterStudent'])->name('goToRegisterStudent');
 
 Route::post('/registerStudent', [RegisterStudentController::class, 'saveStudent'])->name('saveStudent');
+
+
+
+Route::get('/viewResult', [ViewResultsController::class, 'goToResultView'])->name('goToResultView');
