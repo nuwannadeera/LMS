@@ -14,7 +14,6 @@ class ViewResultsController extends Controller {
             ->join('subjects', 'results.subject_id', '=', 'subjects.id')
             ->where('results.user_id', '=', Auth::id())
             ->get();
-        return view('viewResults')
-            ->with('resultList', $resultList);
+        return view('viewResults')->with('resultList', $resultList);
     }
 }

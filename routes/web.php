@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthManagerController;
 use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\RegisterStudentController;
 use App\Http\Controllers\ViewResultsController;
+use App\Http\Controllers\AddResultController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,3 +51,9 @@ Route::post('/registerStudent', [RegisterStudentController::class, 'saveStudent'
 
 
 Route::get('/viewResult', [ViewResultsController::class, 'goToResultView'])->name('goToResultView');
+
+
+
+Route::get('/addResult', [AddResultController::class, 'getAllStudentsAndSubjects'])->name('addResultPage');
+
+Route::post('/addResult', [AddResultController::class, 'saveResult'])->name('saveResult');
