@@ -12,6 +12,8 @@
  https://dev.to/sanajitjana/form-example-in-laravel-8-45oc
  
  https://stackoverflow.com/questions/29508297/laravel-5-how-to-populate-select-box-from-database-with-id-value-and-name-value
+
+ https://www.educative.io/answers/how-to-perform-inner-join-of-two-tables-in-laravel-query
  
  https://stackoverflow.com/questions/29723865/how-to-insert-multiple-rows-from-a-single-query-using-eloquent-fluent
  
