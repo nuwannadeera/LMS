@@ -4,6 +4,8 @@
 /**********************************************/
  
  these are tha main refferences that I used..
+
+ https://getbootstrap.com/docs/4.0/components/forms/
  
  https://stackoverflow.com/questions/41283702/how-to-write-custom-validation-rule-in-controller-laravel
  
